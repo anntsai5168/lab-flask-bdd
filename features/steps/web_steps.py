@@ -160,3 +160,7 @@ def step_impl(context, element_name, text_string):
     )
     element.clear()
     element.send_keys(text_string)
+
+@then(u'I press the "Retrieve" button')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then I press the "Retrieve" button')

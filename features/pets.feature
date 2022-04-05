@@ -80,3 +80,15 @@ Scenario: Update a Pet
     And I press the "Search" button
     Then I should see "Boxer" in the results
     Then I should not see "fido" in the results
+
+Scenario: Delete a Pet
+    When I visit the "Home Page"
+    And I set the "Name" to "fido"
+    And I press the "Search" button
+    Then I should see "fido" in the "Name" field
+    And I should see "dog" in the "Category" field
+    And I press the "Retrieve" button
+    Then I should see the message "Pet has been Deleted!"
+    When I press the "Clear" button
+    And I press the "Search" button
+    Then I should not see "fido" in the results
